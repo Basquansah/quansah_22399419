@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About ShopNow – Ghana's fastest-growing e-commerce platform. Learn our story, mission, and values." />
+  <title>About Us – ShopNow</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .timeline { position: relative; padding-left: 36px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--secondary));
+      border-radius: 3px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px 20px 20px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e3e6e6;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px; top: 22px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      padding: 28px 0;
+    }
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid #e3e6e6;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .team-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      color: var(--white);
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 28px 0;
+    }
+    .stat-box {
+      background: var(--secondary);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stat-box .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .stat-box p { font-size: .88rem; color: #ccc; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="a11y-toolbar" role="toolbar" aria-label="Accessibility tools">
+    <span>Accessibility:</span>
+    <button class="a11y-btn" id="a11y-hc" aria-pressed="false">High Contrast</button>
+    <button class="a11y-btn" id="a11y-f1">A+</button>
+    <button class="a11y-btn" id="a11y-f2">A++</button>
+    <button class="a11y-btn" id="a11y-fr">Reset</button>
+  </div>
+
+  <header role="banner">
+    <div class="header-top">
+      <div class="logo"><a href="index.html">Shop<span>Now</span></a></div>
+      <div class="header-deliver"><div>Deliver to</div><strong>📍 Ghana</strong></div>
+      <div class="search-bar" role="search">
+        <label for="main-search" class="skip-link">Search</label>
+        <select aria-label="Category"><option>All</option></select>
+        <input type="search" id="main-search" placeholder="Search products…" aria-label="Search" />
+        <button type="button" aria-label="Search">🔍</button>
+      </div>
+      <nav class="header-right" aria-label="Account and cart">
+        <a href="#" class="header-link">Hello, Sign in<strong>Account &amp; Lists</strong></a>
+        <a href="cart.html" class="header-link">🛒 Cart<strong><span class="cart-count">0</span> items</strong></a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰ All</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="products.html">🛍 Shop</a></li>
+        <li><a href="detail.html">📱 Electronics</a></li>
+        <li><a href="cart.html">🛒 Cart</a></li>
+        <li><a href="about.html" class="active">ℹ About Us</a></li>
+        <li><a href="contact.html">✉ Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-search-bar" role="search" aria-label="Search within page">
+    <label for="page-search-input">Find on page:</label>
+    <input type="search" id="page-search-input" placeholder="Highlight text…" aria-label="Find on page" />
+    <button id="page-search-btn" type="button">Search</button>
+    <button id="page-search-clear" type="button">Clear</button>
+    <span id="search-result-count" aria-live="polite"></span>
+  </div>
+
+  <div class="page-banner" role="banner">
+    <h1>About ShopNow</h1>
+    <p>Ghana's most trusted e-commerce platform – delivering smiles since 2020</p>
+  </div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span aria-hidden="true">›</span>
+    <span aria-current="page">About Us</span>
+  </nav>
+
+  <main id="main-content" tabindex="-1" class="container">
+
+    <!-- MISSION SECTION -->
+    <section style="padding:40px 0;" aria-labelledby="mission-heading">
+      <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:260px;">
+          <h2 class="section-title" id="mission-heading">Our Mission</h2>
+          <p style="font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:16px;">
+            ShopNow was founded with a simple but powerful mission: to make quality products accessible to every Ghanaian household at fair prices, with fast and reliable delivery.
+          </p>
+          <p style="font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:16px;">
+            Inspired by global e-commerce leaders like Amazon, we believe that every customer deserves a seamless shopping experience — from browsing to doorstep delivery.
+          </p>
+          <p style="font-size:1rem;line-height:1.8;color:var(--muted);">
+            We are committed to empowering local sellers, creating jobs, and building a sustainable digital economy across West Africa.
+          </p>
+        </div>
+        <div style="flex:0 0 420px;max-width:100%;">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80"
+               alt="ShopNow team collaborating in a modern office"
+               style="border-radius:var(--radius);box-shadow:var(--shadow-lg);"
+               loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section aria-labelledby="stats-heading">
+      <h2 class="section-title" id="stats-heading">ShopNow by the Numbers</h2>
+      <div class="stat-row" role="list">
+        <div class="stat-box" role="listitem"><div class="number">500K+</div><p>Happy Customers</p></div>
+        <div class="stat-box" role="listitem"><div class="number">2M+</div><p>Products Listed</p></div>
+        <div class="stat-box" role="listitem"><div class="number">50K+</div><p>Sellers &amp; Vendors</p></div>
+        <div class="stat-box" role="listitem"><div class="number">16</div><p>Cities Served</p></div>
+        <div class="stat-box" role="listitem"><div class="number">99.2%</div><p>On-Time Delivery</p></div>
+        <div class="stat-box" role="listitem"><div class="number">4.8★</div><p>Average Rating</p></div>
+      </div>
+    </section>
+
+    <!-- AUDIO (multimedia format 3 – company podcast/audio) -->
+    <section style="padding:32px 0;" aria-labelledby="audio-heading">
+      <h2 class="section-title" id="audio-heading">Our Story – Podcast Episode</h2>
+      <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);max-width:560px;">
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:14px;">
+          🎙 Listen to our CEO discuss how ShopNow started and the vision for the future of e-commerce in Ghana.
+        </p>
+        <!-- HTML5 Audio – multimedia file format 3 -->
+        <audio controls style="width:100%;" aria-label="ShopNow CEO podcast episode about company origins">
+          <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+          Your browser does not support HTML5 audio.
+        </audio>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:8px;">Episode 1 – "Starting ShopNow: From Vision to Reality" (Demo audio)</p>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section style="padding:28px 0;" aria-labelledby="history-heading">
+      <h2 class="section-title" id="history-heading">Our Journey</h2>
+      <div class="timeline" role="list">
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-year">2020</div>
+          <h3 style="font-size:1rem;margin-bottom:8px;">ShopNow Founded</h3>
+          <p style="font-size:.9rem;color:var(--muted);">Launched in Accra with just 200 products and a team of 5. Our first 100 orders were delivered by bicycle in Osu.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-year">2021</div>
+          <h3 style="font-size:1rem;margin-bottom:8px;">Expanded to Kumasi &amp; Takoradi</h3>
+          <p style="font-size:.9rem;color:var(--muted);">Opened two new fulfilment centres and onboarded 5,000 sellers across Ghana. Launched same-day delivery in Accra.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-year">2022</div>
+          <h3 style="font-size:1rem;margin-bottom:8px;">Launched Mobile App &amp; Prime Service</h3>
+          <p style="font-size:.9rem;color:var(--muted);">Our Android and iOS app hit 100,000 downloads in the first month. Introduced ShopNow Prime for free 1-day delivery.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-year">2023</div>
+          <h3 style="font-size:1rem;margin-bottom:8px;">500,000 Customers Milestone</h3>
+          <p style="font-size:.9rem;color:var(--muted);">Reached half a million registered customers and expanded our electronics and fashion categories significantly.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-year">2025–26</div>
+          <h3 style="font-size:1rem;margin-bottom:8px;">West Africa Expansion &amp; AI Features</h3>
+          <p style="font-size:.9rem;color:var(--muted);">Launched in Nigeria and Côte d'Ivoire. Introduced AI-powered product recommendations and voice search.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section style="padding:28px 0;" aria-labelledby="team-heading">
+      <h2 class="section-title" id="team-heading">Meet the Team</h2>
+      <div class="team-grid" role="list">
+        <div class="team-card" role="listitem">
+          <div class="team-avatar" aria-hidden="true">KA</div>
+          <h3 style="font-size:1rem;margin-bottom:4px;">Kwame Asante</h3>
+          <p style="font-size:.85rem;color:var(--muted);">CEO &amp; Co-Founder</p>
+        </div>
+        <div class="team-card" role="listitem">
+          <div class="team-avatar" aria-hidden="true">AM</div>
+          <h3 style="font-size:1rem;margin-bottom:4px;">Abena Mensah</h3>
+          <p style="font-size:.85rem;color:var(--muted);">CTO &amp; Co-Founder</p>
+        </div>
+        <div class="team-card" role="listitem">
+          <div class="team-avatar" aria-hidden="true">JO</div>
+          <h3 style="font-size:1rem;margin-bottom:4px;">Joseph Owusu</h3>
+          <p style="font-size:.85rem;color:var(--muted);">Head of Logistics</p>
+        </div>
+        <div class="team-card" role="listitem">
+          <div class="team-avatar" aria-hidden="true">FA</div>
+          <h3 style="font-size:1rem;margin-bottom:4px;">Fatima Alhassan</h3>
+          <p style="font-size:.85rem;color:var(--muted);">Head of Marketing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section style="padding:28px 0 48px;" aria-labelledby="values-heading">
+      <h2 class="section-title" id="values-heading">Our Values</h2>
+      <div class="info-grid" role="list">
+        <div class="info-card" role="listitem">
+          <div class="icon" aria-hidden="true">🤝</div>
+          <h3>Customer First</h3>
+          <p>Every decision we make starts with asking: how does this help our customers? We obsess over customer satisfaction.</p>
+        </div>
+        <div class="info-card" role="listitem">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Speed &amp; Reliability</h3>
+          <p>We know your time is precious. We've built our fulfilment network to deliver faster than any competitor in Ghana.</p>
+        </div>
+        <div class="info-card" role="listitem">
+          <div class="icon" aria-hidden="true">🌱</div>
+          <h3>Sustainability</h3>
+          <p>We are committed to reducing our carbon footprint with electric delivery vehicles and recyclable packaging.</p>
+        </div>
+        <div class="info-card" role="listitem">
+          <div class="icon" aria-hidden="true">🔓</div>
+          <h3>Inclusivity</h3>
+          <p>We build for everyone — our platform supports screen readers, high contrast, and multiple local languages.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top" role="button" tabindex="0">↑ Back to top</div>
+    <div class="footer-cols">
+      <div class="footer-col"><h4>Get to Know Us</h4><a href="about.html">About ShopNow</a><a href="#">Careers</a></div>
+      <div class="footer-col"><h4>Shop With Us</h4><a href="products.html">All Products</a><a href="#">Prime</a></div>
+      <div class="footer-col"><h4>Help</h4><a href="contact.html">Contact Us</a><a href="#">Returns</a></div>
+      <div class="footer-col"><h4>Connect</h4>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="logo-small">Shop<span>Now</span></span>
+      <span>© 2025–2026 ShopNow Ghana Ltd.</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
