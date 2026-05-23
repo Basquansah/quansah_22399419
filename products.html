@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse thousands of products at ShopNow – electronics, fashion, books, sports & more." />
+  <title>ShopNow – Shop All Products</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="a11y-toolbar" role="toolbar" aria-label="Accessibility tools">
+    <span>Accessibility:</span>
+    <button class="a11y-btn" id="a11y-hc" aria-pressed="false">High Contrast</button>
+    <button class="a11y-btn" id="a11y-f1">A+</button>
+    <button class="a11y-btn" id="a11y-f2">A++</button>
+    <button class="a11y-btn" id="a11y-fr">Reset</button>
+  </div>
+
+  <header role="banner">
+    <div class="header-top">
+      <div class="logo"><a href="index.html">Shop<span>Now</span></a></div>
+      <div class="header-deliver"><div>Deliver to</div><strong>📍 Ghana</strong></div>
+      <div class="search-bar" role="search">
+        <label for="main-search" class="skip-link">Search</label>
+        <select aria-label="Category"><option>All</option><option>Electronics</option><option>Fashion</option><option>Books</option></select>
+        <input type="search" id="main-search" placeholder="Search products…" aria-label="Search products" />
+        <button type="button" aria-label="Search">🔍</button>
+      </div>
+      <nav class="header-right" aria-label="Account and cart">
+        <a href="#" class="header-link">Hello, Sign in<strong>Account &amp; Lists</strong></a>
+        <a href="cart.html" class="header-link">🛒 Cart<strong><span class="cart-count">0</span> items</strong></a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰ All</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="products.html" class="active">🛍 Shop</a></li>
+        <li><a href="detail.html">📱 Electronics</a></li>
+        <li><a href="cart.html">🛒 Cart</a></li>
+        <li><a href="about.html">ℹ About Us</a></li>
+        <li><a href="contact.html">✉ Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-search-bar" role="search" aria-label="Search within page">
+    <label for="page-search-input">Find on page:</label>
+    <input type="search" id="page-search-input" placeholder="Highlight text on page…" aria-label="Find on page" />
+    <button id="page-search-btn" type="button">Search</button>
+    <button id="page-search-clear" type="button">Clear</button>
+    <span id="search-result-count" aria-live="polite"></span>
+  </div>
+
+  <div class="page-banner" role="banner">
+    <h1>Shop All Products</h1>
+    <p>Explore our full catalogue — millions of items, great prices</p>
+  </div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">All Products</span>
+  </nav>
+
+  <main id="main-content" tabindex="-1" class="container">
+    <div class="shop-layout">
+
+      <!-- SIDEBAR FILTERS -->
+      <aside class="sidebar" aria-label="Product filters">
+        <h2 style="font-size:1.1rem;margin-bottom:18px;border-bottom:2px solid var(--accent);padding-bottom:8px;">Filters</h2>
+
+        <div class="filter-group">
+          <h3>Category</h3>
+          <label><input type="checkbox" checked aria-label="Electronics" /> Electronics</label>
+          <label><input type="checkbox" checked aria-label="Fashion" /> Fashion</label>
+          <label><input type="checkbox" checked aria-label="Books" /> Books</label>
+          <label><input type="checkbox" checked aria-label="Sports" /> Sports</label>
+          <label><input type="checkbox" checked aria-label="Home and Kitchen" /> Home &amp; Kitchen</label>
+          <label><input type="checkbox" checked aria-label="Beauty and Health" /> Beauty &amp; Health</label>
+        </div>
+
+        <div class="filter-group">
+          <h3>Price Range</h3>
+          <input type="range" min="0" max="20000" value="20000" id="price-range"
+                 aria-label="Maximum price filter" aria-valuemin="0" aria-valuemax="20000"
+                 oninput="document.getElementById('price-val').textContent='GH₵'+this.value" />
+          <div class="price-display">Up to: <strong id="price-val">GH₵20000</strong></div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Rating</h3>
+          <label><input type="radio" name="rating" value="4" aria-label="4 stars and above" /> ★★★★☆ &amp; above</label>
+          <label><input type="radio" name="rating" value="3" aria-label="3 stars and above" /> ★★★☆☆ &amp; above</label>
+          <label><input type="radio" name="rating" value="0"  checked aria-label="All ratings" /> All ratings</label>
+        </div>
+
+        <div class="filter-group">
+          <h3>Delivery</h3>
+          <label><input type="checkbox" aria-label="Prime eligible" /> ✔ Prime Eligible</label>
+          <label><input type="checkbox" aria-label="Same day delivery" /> Same-Day Delivery</label>
+        </div>
+
+        <button class="filter-btn" type="button" aria-label="Apply filters">Apply Filters</button>
+      </aside>
+
+      <!-- PRODUCTS AREA -->
+      <section class="products-area" aria-label="Product listings">
+        <div class="sort-bar">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select" aria-label="Sort products">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Avg. Customer Review</option>
+            <option>Newest Arrivals</option>
+          </select>
+          <span class="results-count" aria-live="polite">Showing 1–12 of 5,847 results</span>
+        </div>
+
+        <div class="products-grid" role="list">
+
+          <article class="product-card" role="listitem" aria-label="Samsung Galaxy S25">
+            <div class="product-img-wrap">
+              <span class="product-badge">-20%</span>
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&q=80"
+                   alt="Samsung Galaxy S25 smartphone" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Samsung</div>
+              <h3 class="product-title">Galaxy S25 Ultra 5G – 256GB</h3>
+              <div class="stars" aria-label="4.5 stars">★★★★½</div>
+              <span class="review-count">(1,842)</span>
+              <div class="price-wrap"><span class="price">GH₵6,499</span><span class="price-old">GH₵7,999</span></div>
+              <span class="prime-badge">✔ Prime</span>
+              <div class="btn-cart"><button onclick="addToCart('p1','Samsung Galaxy S25','6499','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="MacBook Air M3">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80"
+                   alt="Apple MacBook Air M3 laptop" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Apple</div>
+              <h3 class="product-title">MacBook Air M3 – 13" 8GB/256GB</h3>
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <span class="review-count">(3,201)</span>
+              <div class="price-wrap"><span class="price">GH₵14,999</span></div>
+              <span class="prime-badge">✔ Prime</span>
+              <div class="btn-cart"><button onclick="addToCart('p2','MacBook Air M3','14999','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Sony WH-1000XM5">
+            <div class="product-img-wrap">
+              <span class="product-badge">HOT</span>
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80"
+                   alt="Sony wireless noise cancelling headphones" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Sony</div>
+              <h3 class="product-title">WH-1000XM5 Wireless Noise Cancelling</h3>
+              <div class="stars" aria-label="4.5 stars">★★★★½</div>
+              <span class="review-count">(5,670)</span>
+              <div class="price-wrap"><span class="price">GH₵2,199</span><span class="price-old">GH₵2,799</span></div>
+              <span class="prime-badge">✔ Prime</span>
+              <div class="btn-cart"><button onclick="addToCart('p3','Sony WH-1000XM5','2199','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Nike Air Max 270">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80"
+                   alt="Nike Air Max 270 running shoes" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Nike</div>
+              <h3 class="product-title">Air Max 270 Running Shoes</h3>
+              <div class="stars" aria-label="4 stars">★★★★☆</div>
+              <span class="review-count">(2,108)</span>
+              <div class="price-wrap"><span class="price">GH₵780</span></div>
+              <div class="btn-cart"><button onclick="addToCart('p4','Nike Air Max 270','780','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Kindle Paperwhite">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80"
+                   alt="Amazon Kindle e-reader device" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Amazon</div>
+              <h3 class="product-title">Kindle Paperwhite 16GB – Wi-Fi</h3>
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <span class="review-count">(8,430)</span>
+              <div class="price-wrap"><span class="price">GH₵799</span><span class="price-old">GH₵999</span></div>
+              <span class="prime-badge">✔ Prime</span>
+              <div class="btn-cart"><button onclick="addToCart('p5','Kindle Paperwhite','799','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Coffee Maker">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80"
+                   alt="Coffee maker and cup of coffee" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Nespresso</div>
+              <h3 class="product-title">Vertuo Next Coffee Maker &amp; Espresso</h3>
+              <div class="stars" aria-label="4.5 stars">★★★★½</div>
+              <span class="review-count">(4,312)</span>
+              <div class="price-wrap"><span class="price">GH₵1,299</span></div>
+              <div class="btn-cart"><button onclick="addToCart('p6','Nespresso Vertuo','1299','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Yoga Mat">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&q=80"
+                   alt="Purple yoga mat rolled out" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Lululemon</div>
+              <h3 class="product-title">The Reversible Mat 5mm – Non-Slip</h3>
+              <div class="stars" aria-label="4 stars">★★★★☆</div>
+              <span class="review-count">(892)</span>
+              <div class="price-wrap"><span class="price">GH₵450</span></div>
+              <div class="btn-cart"><button onclick="addToCart('p7','Yoga Mat','450','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" aria-label="Sunglasses">
+            <div class="product-img-wrap">
+              <span class="product-badge">-15%</span>
+              <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80"
+                   alt="Ray-Ban aviator sunglasses" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-brand">Ray-Ban</div>
+              <h3 class="product-title">Aviator Classic Sunglasses – UV400</h3>
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <span class="review-count">(1,540)</span>
+              <div class="price-wrap"><span class="price">GH₵680</span><span class="price-old">GH₵799</span></div>
+              <div class="btn-cart"><button onclick="addToCart('p8','Ray-Ban Aviator','680','')">Add to Cart</button></div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Product pagination" style="margin-top:32px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+          <button style="background:var(--accent);border:none;padding:8px 16px;border-radius:6px;font-weight:600;" aria-current="page" aria-label="Page 1">1</button>
+          <button style="background:#fff;border:1px solid #ccc;padding:8px 16px;border-radius:6px;" aria-label="Page 2">2</button>
+          <button style="background:#fff;border:1px solid #ccc;padding:8px 16px;border-radius:6px;" aria-label="Page 3">3</button>
+          <button style="background:#fff;border:1px solid #ccc;padding:8px 16px;border-radius:6px;" aria-label="Next page">Next →</button>
+        </nav>
+      </section>
+
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top" role="button" tabindex="0">↑ Back to top</div>
+    <div class="footer-cols">
+      <div class="footer-col"><h4>Get to Know Us</h4><a href="about.html">About ShopNow</a><a href="#">Careers</a></div>
+      <div class="footer-col"><h4>Shop With Us</h4><a href="products.html">All Products</a><a href="#">Prime</a></div>
+      <div class="footer-col"><h4>Help</h4><a href="contact.html">Contact Us</a><a href="#">Returns</a></div>
+      <div class="footer-col"><h4>Connect</h4>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+        <a href="https://twitter.com"  target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="logo-small">Shop<span>Now</span></span>
+      <span>© 2025–2026 ShopNow Ghana Ltd.</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>
